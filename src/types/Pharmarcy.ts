@@ -1,19 +1,36 @@
 export interface pharmacyData {
+    id: string
+    pharmacyChainId: string;
     name: string;
+    active: boolean;
+    localId: string;
+    acceptInvalidAddress: boolean;
+    testPharmacy: boolean;
     address: Address;
+    checkoutPharmacy: boolean;
+    defaultTimeZone: any;
     primaryPhoneNumber: string;
     pharmacyHours?: string
+    pharmacistInCharge: string | null;
+    postalCodes: string[] | null;
+    deliverableStates: string[];
+    deliverySubsidyAmount: number | null;
+    pharmacySystem: string;
+    pharmacyType: string;
+    pharmacyLoginCode: string | null;
+    marketplacePharmacy: boolean;
+    importActive: boolean;
 }
 
 export interface Address {
-    addressType: string;
+    streetAddress1: string;
     city: string;
-    externalId: string;
-    googlePlaceId: string;
-    isValid: boolean;
+    usTerritory: string;
+    postalCode: string;
     latitude: number;
     longitude: number;
-    postalCode: string;
-    streetAddress1: string;
-    usTerritory: string;
+    addressType: string;
+    externalId: string;
+    isValid: boolean;
+    googlePlaceId: string;
 }

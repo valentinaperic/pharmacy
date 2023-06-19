@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import ClosestPharmacyButton from './ClosestPharmacyButton';
 
 interface Pharmacy {
     name: string,
@@ -8,6 +9,9 @@ interface Pharmacy {
 
 const PharmaciesList = () => {
     const [pharmacies, setPharmacies] = useState([]);
+
+    const currentLatitude = 37.48771670017411;
+    const currentLongitude = -122.22652739630438
     
     useEffect(() => {
       const fetchPharmacies = async () => {
@@ -34,7 +38,7 @@ const PharmaciesList = () => {
                 ))}
             </div>
             <div className="closet-pharmacy">
-                <button></button>
+                <ClosestPharmacyButton latitude={currentLatitude} longitude={currentLongitude} />
             </div>
 
         </div>
