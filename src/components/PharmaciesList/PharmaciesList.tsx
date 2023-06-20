@@ -37,7 +37,7 @@ const PharmaciesList = () => {
         <div className='pharmacy-list'>
           {pharmacies.map((pharmacy: Pharmacy) => {
             return (
-              <Link key={pharmacy.pharmacyId} to={`/pharmacies/${pharmacy.pharmacyId}`} state={{ orderedPharmacyId: pharmacy.pharmacyId, medications: pharmacy.medications }}>
+              <Link key={pharmacy.pharmacyId} to={`/pharmacies/${pharmacy.pharmacyId}`} state={{ orderedPharmacyId: pharmacy.pharmacyId }}>
                 {pharmacy.name}
                  {/* Display a checkmark if the pharmacy is ordered from */}
                 {pharmacy.ordered && <span>&#10003;</span>} 

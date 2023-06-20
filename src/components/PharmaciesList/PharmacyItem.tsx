@@ -4,6 +4,7 @@ import { pharmacyData } from '../../types/Pharmarcy';
 
 const PharmacyDetails: React.FC = () => {
   const [pharmacyData, setPharmacyData] = useState<pharmacyData>();
+  const [medications, setMedications] = useState<[]>([]);
 
   const params = useParams();
 
@@ -19,8 +20,15 @@ const PharmacyDetails: React.FC = () => {
     };
 
     fetchPharmacyData();
-  });
 
+    //check if there are ordered medications with the pharmarcy
+    if (params.id === localStorage.getItem('orderedPharmacyId')) {
+      const medications = localStorage.getItem('medications');
+      if (medications) {
+        setMedications(JSON.parse(medications));
+      }
+    }
+  }, []);
 
   if (!pharmacyData) {
     return <div>Loading pharmacy details...</div>;
@@ -32,7 +40,22 @@ const PharmacyDetails: React.FC = () => {
         <p>address: {pharmacyData.address.streetAddress1}</p>
         <p>phone number: {pharmacyData.primaryPhoneNumber}</p>
         <p>hours: {pharmacyData.pharmacyHours}</p>
-    </div>
+
+        {medications && medications.length > 0 ? (
+          <div>
+            <h3>Confirmed Medications:</h3>
+            <ul>
+              {medications.map((medication) => (
+                <li key={medication}>{medication}</li>
+              ))}
+            </ul>
+          </div>
+          ) : (
+            <div>
+              <p>No confirmed medications.</p>
+            </div>
+          )}
+      </div>
   );
 };
 
