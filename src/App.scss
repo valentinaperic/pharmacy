@@ -1,0 +1,32 @@
+button {
+    color: #fff;
+    text-align: center;
+    letter-spacing: .05px;
+    background-color: #664cfc;
+    border-radius: 4px;
+    padding: 0.6rem 0.5rem;
+    font-weight: 400;
+    line-height: 1.13333;
+    transition: background-color .2s;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #200080;
+}
+
+a {
+    color: #2e2f35;
+    border-bottom: 3px solid transparent;
+    padding: 1rem 1.3rem;
+    font-size: 1.3125rem;
+    line-height: 1.04762;
+    transition: color .2s,transform .2s;
+}
+
+a:hover {
+    color: #664cfc;
+    transform: translateY(-4px);
+    outline: 0;
+}

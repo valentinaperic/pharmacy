@@ -1,8 +1,9 @@
 import React from 'react';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
-import PharmaciesList from './components/PharmaciesList/PharmaciesList';
-import PharmacyDetails from './components/PharmaciesList/PharmacyItem';
+import PharmaciesList from './components/Pharmacy/PharmaciesList';
+import PharmacyDetails from './components/Pharmacy/PharmacyDetails';
 import MedicationOrder from './components/Medications/MedicationOrder';
+import './App.scss';
 
 export interface IApplicationProps {}
 

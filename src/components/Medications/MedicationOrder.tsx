@@ -89,7 +89,7 @@ const MedicationSelection: React.FC = () => {
 
   return (
     <div className='medication-order'>
-      <h2>Medication Selection</h2>
+      <h2>Medication Selection from {location.state.orderedPharmarcyName}</h2>
       <div className='medication-container'>
         <div className='medication-selections'>
             {currentMedications.map((medication) => (

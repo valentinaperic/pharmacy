@@ -40,7 +40,7 @@ const PharmaciesList = () => {
               <Link key={pharmacy.pharmacyId} to={`/pharmacies/${pharmacy.pharmacyId}`} state={{ orderedPharmacyId: pharmacy.pharmacyId }}>
                 {pharmacy.name}
                  {/* Display a checkmark if the pharmacy is ordered from */}
-                {pharmacy.ordered && <span>&#10003;</span>} 
+                {pharmacy.ordered && <span className='checkmark'>&#10003;</span>} 
               </Link>
             );
           })}
