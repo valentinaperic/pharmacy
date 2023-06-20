@@ -1,5 +1,6 @@
 export interface pharmacyData {
-    id: string
+    id: string;
+    pharmacies: string[];
     pharmacyChainId: string;
     name: string;
     active: boolean;
@@ -20,6 +21,7 @@ export interface pharmacyData {
     pharmacyLoginCode: string | null;
     marketplacePharmacy: boolean;
     importActive: boolean;
+    ordered: boolean;
 }
 
 export interface Address {
@@ -34,3 +36,16 @@ export interface Address {
     isValid: boolean;
     googlePlaceId: string;
 }
+
+export interface Pharmacy {
+    name: string;
+    pharmacyId: string;
+    ordered: boolean;
+    medications: string[];
+}
+
+export interface Medication {
+    id: string;
+    name: string;
+}
+  

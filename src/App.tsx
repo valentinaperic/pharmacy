@@ -1,7 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, BrowserRouter, Routes } from 'react-router-dom';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import PharmaciesList from './components/PharmaciesList/PharmaciesList';
 import PharmacyDetails from './components/PharmaciesList/PharmacyItem';
+import MedicationOrder from './components/Medications/MedicationOrder';
 
 export interface IApplicationProps {}
 
@@ -11,11 +12,9 @@ const App: React.FC<IApplicationProps> = (props) => {
         <Routes>
             <Route path="pharmacies" element={<PharmaciesList />} />
             <Route path="pharmacies/:id" element={<PharmacyDetails />} />
+            <Route path="pharmacy/order/:id" element={<MedicationOrder />} />
         </Routes>
     </BrowserRouter>
-
-
-
   );
 };
 

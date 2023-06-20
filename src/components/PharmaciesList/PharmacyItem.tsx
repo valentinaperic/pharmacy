@@ -12,7 +12,6 @@ const PharmacyDetails: React.FC = () => {
       try {
         const response = await fetch(`https://assets.nimblerx.com/interviews/pharmacy/${params.id}`);
         const data = await response.json();
-        console.log(data);
         setPharmacyData(data);
       } catch (error) {
         console.error('Error fetching pharmacy data:', error);
@@ -20,7 +19,7 @@ const PharmacyDetails: React.FC = () => {
     };
 
     fetchPharmacyData();
-  }, []);
+  });
 
 
   if (!pharmacyData) {

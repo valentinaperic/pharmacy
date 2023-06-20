@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { pharmacyData } from './../../types/Pharmarcy';
+import { pharmacyData, Pharmacy } from './../../types/Pharmarcy';
 import { useNavigate } from 'react-router-dom';
 
 
 interface ClosestPharmacyButtonProps {
   latitude: number;
   longitude: number;
+  pharmacies: Pharmacy[];
 }
 
 const ClosestPharmacyButton: React.FC<ClosestPharmacyButtonProps> = ({ latitude, longitude }) => {
@@ -82,7 +83,7 @@ const ClosestPharmacyButton: React.FC<ClosestPharmacyButtonProps> = ({ latitude,
 
   const handleButtonClick = () => {
     if (closestPharmacy && closestPharmacy.id) {
-      navigate(`/pharmacies/${closestPharmacy.id}`);
+      navigate(`/pharmacy/order/${closestPharmacy.id}`, { state: { orderedPharmacyId: closestPharmacy.id } });
     }
   };
 
