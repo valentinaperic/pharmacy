@@ -1,3 +1,15 @@
+# Getting Started 
+
+### `npm start`
+
+Runs the App. Direct yourself to `http://localhost:3000/pharmacies`
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
